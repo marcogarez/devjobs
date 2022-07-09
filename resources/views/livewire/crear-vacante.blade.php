@@ -2,13 +2,13 @@
     <div class="mt-4">
         <x-label for="titulo" :value="__('Título')" />
 
-        <x-input id="titulo" class="block mt-1 w-full" type="text" name="titulo" value="{{ old('titulo') }}"
+        <x-input id="titulo" wire:model="titulo" class="block mt-1 w-full" type="text" value="{{ old('titulo') }}"
             placeholder="Título de la vacante" />
     </div>
     <div class="mt-4">
         <x-label for="salario" :value="__('Salario mensual')" />
 
-        <select name="salario" id="salario"
+        <select id="salario" wire:model="salario"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
             <option>-- Selecciona --</option>
             @foreach ($salarios as $salario)
@@ -19,7 +19,7 @@
     <div class="mt-4">
         <x-label for="categoria" :value="__('Categoría')" />
 
-        <select name="categoria" id="categoria"
+        <select id="categoria" wire:model="categoria"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full">
             <option>-- Selecciona --</option>
             @foreach ($categorias as $categoria)
@@ -30,23 +30,23 @@
     <div class="mt-4">
         <x-label for="empresa" :value="__('Empresa')" />
 
-        <x-input id="empresa" class="block mt-1 w-full" type="text" name="empresa" value="{{ old('empresa') }}"
+        <x-input id="empresa" wire:model="empresa" class="block mt-1 w-full" type="text" value="{{ old('empresa') }}"
             placeholder="Ej. Netflix, Uber, Shopify" />
     </div>
     <div class="mt-4">
         <x-label for="ultimo_dia" :value="__('Último día para postularse')" />
 
-        <x-input id="ultimo_dia" class="block mt-1 w-full" type="date" name="ultimo_dia" value="{{ old('ultimo_dia') }}" />
+        <x-input id="ultimo_dia" wire:model="ultimo_dia" class="block mt-1 w-full" type="date" value="{{ old('ultimo_dia') }}" />
     </div>
     <div class="mt-4">
         <x-label for="descripcion" :value="__('Descripción del puesto')" />
 
-        <textarea id="descripcion" placeholder="Descripción general del puesto, experiencia, etc." class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full h-24" name="descripcion">{{ old('descripcion') }}</textarea>
+        <textarea id="descripcion" wire:model="descripcion" placeholder="Descripción general del puesto, experiencia, etc." class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full h-24">{{ old('descripcion') }}</textarea>
     </div>
     <div class="mt-4">
         <x-label for="imagen" :value="__('Imagen')" />
 
-        <x-input id="imagen" class="block mt-1 w-full" type="file" name="imagen" />
+        <x-input id="imagen" wire:model="imagen" class="block mt-1 w-full" type="file" />
     </div>
 
     <x-button>
