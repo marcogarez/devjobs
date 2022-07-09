@@ -50,9 +50,9 @@
                     <x-link :href="route('password.request')">Olvidaste tu password?</x-link>
                 @endif
             </div>
+            <x-button class="w-full justify-center">
+                {{ __('Crear cuenta') }}
+            </x-button>
         </form>
-        <x-button class="w-full justify-center">
-            {{ __('Crear cuenta') }}
-        </x-button>
     </x-auth-card>
 </x-guest-layout>
