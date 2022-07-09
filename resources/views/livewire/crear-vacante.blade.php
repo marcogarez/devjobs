@@ -1,9 +1,12 @@
-<form action="" class="md:w-1/2 space-y-5" enctype="multipart/form-data">
+<form action="" class="md:w-1/2 space-y-5" enctype="multipart/form-data" wire:submit.prevent="crearVacante">
     <div class="mt-4">
         <x-label for="titulo" :value="__('Título')" />
 
         <x-input id="titulo" wire:model="titulo" class="block mt-1 w-full" type="text" value="{{ old('titulo') }}"
             placeholder="Título de la vacante" />
+        @error('titulo')
+            {{$message}}
+        @enderror
     </div>
     <div class="mt-4">
         <x-label for="salario" :value="__('Salario mensual')" />
