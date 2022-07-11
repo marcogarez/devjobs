@@ -65,12 +65,21 @@
     </div>
     <div class="mt-4">
         <x-label for="imagen" :value="__('Imagen')" />
-        
-        <x-input id="imagen" wire:model="imagen" class="block mt-1 w-full" type="file" accept="image/*" />
-        
+
+        <x-input id="imagen_nueva" wire:model="imagen_nueva" class="block mt-1 w-full" type="file"
+            accept="image/*" />
+
         <div class="my-5 w-80">
             <x-label :value="__('Imagen actual')" />
             <img src="{{ asset('storage/vacantes/' . $imagen) }}" alt="{{ "Imagen vacante $titulo" }}" />
+        </div>
+
+
+        <div class="my-5 w-80">
+            @if ($imagen_nueva)
+                <x-label :value="__('Nueva imagen')" />
+                <img src="{{ $imagen_nueva->temporaryUrl() }}" />
+            @endif
         </div>
 
         @error('imagen')
