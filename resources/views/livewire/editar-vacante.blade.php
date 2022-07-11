@@ -79,6 +79,6 @@
     </div>
 
     <x-button>
-        Crear vacante
+        Guardar cambios
     </x-button>
 </form>
