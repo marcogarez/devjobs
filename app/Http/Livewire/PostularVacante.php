@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class PostularVacante extends Component
 {
@@ -12,9 +13,16 @@ class PostularVacante extends Component
         'cv' => 'required|mimes:pdf',
     ];
 
+    use WithFileUploads;
+
     public function postularme()
     {
         $datos = $this->validate();
+
+        $cv = $this->cv->store('public/cv');
+        $datos['cv'] = str_replace('public/cv/', '', $cv);
+
+        
     }
 
     public function render()
