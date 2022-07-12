@@ -30,4 +30,9 @@
                     una cuenta y aplica a esta y muchas otras vacantes</a></p>
         </div>
     @endguest
+
+    @cannot('create', App\Models\Vacante::class)
+        @livewire('postular-vacante')
+    @endcannot
+
 </div>
